@@ -5,7 +5,7 @@ public class TestUtil {
 	public static int[] getRandomIntegers(int size) {
 		int[] randomNumbers = new int[size];
 		for (int i = 0; i < randomNumbers.length; i++) {
-			int num = (int) (10000 * (Math.random() + Math.random()));
+			int num = (int) (1000 * (Math.random() + Math.random()));
 			randomNumbers[i] = num;
 		}
 		return randomNumbers;

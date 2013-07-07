@@ -1,4 +1,6 @@
-package sorting;
+package sorting.simple;
+
+import sorting.Sort;
 
 public class BubbleSort implements Sort {
 
