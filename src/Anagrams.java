@@ -26,6 +26,25 @@ public class Anagrams
 	    }
 	}
 	
+	/**
+	 * Algorithm to find if given two words are anagram.
+	 * Time complexity is O(N) and no additional space complexity.
+	 * @author HemantSingh@Gmail.com
+	 */
+	public static boolean isAnagramWithoutSpaceComplexity(String s1, String s2) {
+	    if (s1 == null || s2 == null || s1.length() != s2.length()) {
+	        return false;
+	    }
+	    int sum1 = 0, sum2 = 0;
+	    // Assume each character as a number, and thus
+	    // sum of both words should be same
+	    for (int i = 0; i < s1.length(); i++) {
+	        sum1 += (int)s1.charAt(i);
+	        sum2 += (int)s2.charAt(i);
+	    }
+	 	return sum1 != sum2;
+	}
+	
 	// Write a method that takes in two strings and returns whether they are anagrams
 	// E.g. aab and aba
 	// Time complexity of this algorithm is O(N)
