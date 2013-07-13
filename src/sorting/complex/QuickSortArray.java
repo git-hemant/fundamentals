@@ -6,7 +6,9 @@ public class QuickSortArray {
 
 	public static void main(String[] args) {
 		int n[] = TestUtil.getRandomIntegers(25);
-		n = new int[] { 19, 15, 22, 8, 3, 64};
+		n = new int[] { 881, 1369, 890, 1088, 1030, 1492, 1350, 550, 1217,
+				1053, 580, 1366, 851, 1337, 1183, 1179, 1811, 857, 1223, 603,
+				426, 1536, 1341, 1033, 423 };
 		TestUtil.print(n);
 		new QuickSortArray().sort(n);
 		TestUtil.print(n);
