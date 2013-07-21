@@ -13,6 +13,9 @@ public class TestUtil {
 	
 	public static void print(int[] n) {
 		int size = n.length % 61;
+		
+		System.out.println("Total (" + size + ") ");
+		
 		for (int i = 0; i < size; i++) {
 			if (i > 0) {
 				System.out.print(", ");
