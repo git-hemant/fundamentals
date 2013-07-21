@@ -18,6 +18,8 @@ public class QuickSortMy {
 		sort(n, 0, n.length - 1);
 	}
 
+	// If Java was not statically typed language, maybe we could have used
+	// one sort function here to sort all the primitive types
 	private void sort(int[] n, int low, int high) {
 		int left = low;
 		int right = high;
