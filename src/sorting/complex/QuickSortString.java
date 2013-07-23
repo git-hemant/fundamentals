@@ -1,33 +1,60 @@
 package sorting.complex;
 
+import sorting.TestUtil;
+
+
 public class QuickSortString {
-	private static void sortA(String[] s, int start, int end) {
-		if (end > start) {
-			int pivot = partition(s, start, end);
-			sortA(s, start, pivot - 1);
-			sortA(s, pivot + 1, end);
+
+	public static void main(String[] args) {
+		Comparable[] n = { "In", "numerical", "linear", "algebra", "the",
+				"tridiagonal", "matrix", "algorithm", "also", "known", "as",
+				"the", "Thomas", "algorithm", "named", "after", "Llewellyn",
+				"Thomas", "is", "a", "simplified", "form", "of", "Gaussian",
+				"elimination", "that", "can", "be", "used", "to", "solve",
+				"tridiagonal", "systems", "of", "equations.", "A",
+				"tridiagonal", "system", "for", "n", "unknowns", "may", "be",
+				"written", "as" };
+		TestUtil.print(n);
+		qs(n, 0, n.length - 1);
+		TestUtil.print(n);
+	}
+	
+	
+	public static void qs(Comparable n[], int low, int high) {
+		int left = low;
+		int right = high;
+		Comparable pivot = n[((high-low)/2) + low];
+		while (left < right) {
+			while (isLessThan(n[left], pivot)) {
+				left++;
+			}
+			while (isGreaterThan(n[right], pivot)) {
+				right--;
+			}
+			if (left <= right) {
+				//Swap the values
+				Comparable temp = n[left];
+				n[left] = n[right];
+				n[right] = temp;
+				left++;
+				right--;
+			}
+		}
+		if (low < right) {
+			qs(n, low, right);
+		}
+		if (left < high) {
+			qs(n, left, high);
 		}
 	}
-
-	private static int partition(String[] s, int start, int end) {
-		String pivot = s[end];
-		int left = start;
-		int right = end;
-		String temp = "";
-		do {
-			while ((s[left].compareTo(pivot) <= 0) && (left < end))
-				left++;
-			while ((s[right].compareTo(pivot) > 0) && (right > start))
-				right--;
-			if (left < right) {
-				temp = s[left];
-				s[left] = s[end];
-				s[right] = temp;
-			}
-		} while (left < right);
-		temp = s[left];
-		s[left] = s[end];
-		s[end] = temp;
-		return left;
+	
+	private static boolean isLessThan(Comparable c1, Comparable c2) {
+		int c = c1.compareTo(c2);
+		return c != 0 && c < 0;
 	}
+	
+	private static boolean isGreaterThan(Comparable c1, Comparable c2) {
+		int c = c1.compareTo(c2);
+		return c != 0 && c > 0;
+	}	
 }

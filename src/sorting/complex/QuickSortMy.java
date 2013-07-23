@@ -5,9 +5,7 @@ import sorting.TestUtil;
 public class QuickSortMy {
 	public static void main(String[] args) {
 		int n[] = TestUtil.getRandomIntegers(25);
-		n = new int[] { 881, 1369, 890, 1088, 1030, 1492, 1350, 550, 1217,
-				1053, 580, 1366, 851, 1337, 1183, 1179, 1811, 857, 1223, 603,
-				426, 1536, 1341, 1033, 423 };
+		n = new int[] { 11, 38, 35, 7, 10, 27, 17, 22, 6, 38, 20, 12  };
 		TestUtil.print(n);
 		new QuickSortMy().sortIntegerArray(n);
 		TestUtil.print(n);
