@@ -4,7 +4,7 @@ public class NumberPowerOf2
 	{
 		for (int i = 0; i < java.lang.Integer.MAX_VALUE; i++)
 			if (isPowerOf2(i))
-				System.out.println(i);
+				System.out.println(i + " = binary -> " + java.lang.Integer.toBinaryString(i) + "  " + i + " - 1 binary -> " + java.lang.Integer.toBinaryString(i - 1));
 	}
 	
 	// Let's for example consider the e.g. of 4
