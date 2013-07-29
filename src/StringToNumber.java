@@ -5,7 +5,16 @@ public class StringToNumber {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter a valid number: ");
 		String nStr = scanner.nextLine();
-		System.out.println("Number is: " + strToNumber(nStr));
+		System.out.println("Number is: " + myStrToNumber(nStr));
+	}
+	
+	private static int myStrToNumber(String str) {
+		boolean isNeg = str.charAt(0) == '-';
+		int n = 0;
+		for (int i = isNeg ? 1 : 0; i < str.length(); i++) {
+			n = (n * 10) + (str.charAt(i) - '0');
+		}
+		return isNeg ? (n * -1) : n;
 	}
 	
 	private static int strToNumber(String str) {

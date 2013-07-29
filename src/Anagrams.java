@@ -26,25 +26,6 @@ public class Anagrams
 	    }
 	}
 	
-	/**
-	 * Algorithm to find if given two words are anagram.
-	 * Time complexity is O(N) and no additional space complexity.
-	 * @author HemantSingh@Gmail.com
-	 */
-	public static boolean isAnagramWithoutSpaceComplexity(String s1, String s2) {
-	    if (s1 == null || s2 == null || s1.length() != s2.length()) {
-	        return false;
-	    }
-	    int sum1 = 0, sum2 = 0;
-	    // Assume each character as a number, and thus
-	    // sum of both words should be same
-	    for (int i = 0; i < s1.length(); i++) {
-	        sum1 += (int)s1.charAt(i);
-	        sum2 += (int)s2.charAt(i);
-	    }
-	 	return sum1 != sum2;
-	}
-	
 	// Write a method that takes in two strings and returns whether they are anagrams
 	// E.g. aab and aba
 	// Time complexity of this algorithm is O(N)
@@ -102,7 +83,28 @@ public class Anagrams
 	
 	public static void main(String[] args) throws IOException
 	{
-		showStringPermutations("abc");
+		showAllCombinations("abc");
+		//showStringPermutations("abc");
+		//dictionaryAnagram();
+		
+	}
+	
+	private static void showAllCombinations(String str) {
+		StringBuilder buff = new StringBuilder();
+		doCombine(str.toCharArray(), buff, str.length(), 0, 0);
+	}
+	
+	private static void doCombine(char[] instr, StringBuilder outstr, int length, int level, int start) {
+		for (int i = start; i < length; i++) {
+			outstr.append(instr[i]);
+			System.out.println(outstr);
+			if (i < (length - 1)) {
+				doCombine(instr, outstr, length, level + 1, i + 1);
+			}
+			
+			outstr.setLength(outstr.length() - 1);
+		}
+		
 	}
 	
 	public static void dictionaryAnagram() throws IOException {
@@ -111,18 +113,23 @@ public class Anagrams
 
 		HashMap<String, ArrayList<String>> map =  new HashMap<String, ArrayList<String>>();
 
+		int count = 0;
 		while( sc.hasNextLine() )
 		{
+			count++;
 			String word = sc.nextLine();
 			String sortedWord = sortString(word); // this is a key
 
 			ArrayList<String> anagrams = map.get( sortedWord );  //this is a value
 
-			if( anagrams == null ) anagrams = new ArrayList<String>();
+			if( anagrams == null ) {
+				anagrams = new ArrayList<String>();
+				map.put(sortedWord, anagrams);
+			}
 
 			anagrams.add(word);
-			map.put(sortedWord, anagrams);
 		}
+		System.out.println("Total words: " + count);
 		System.out.println(map.get(sortString("bread")));   //testing
 
 	}
