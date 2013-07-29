@@ -10,6 +10,7 @@ public class TestThread {
 				System.out.println("Hello world from the thread!");
 			}
 		};
+		// Main thread don't wait for the daemon threads to finish!
 		t.setDaemon(true);
 		System.out.println(t.isDaemon());
 		t.start();

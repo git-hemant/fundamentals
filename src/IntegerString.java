@@ -2,10 +2,12 @@
 public class IntegerString {
 
 	public static void main(String[] args) {
-		System.out.println("Hella".compareTo("Hello"));
-		System.out.println(integerToString(-5, 1));
-		System.out.println(integerToString(150, 4));
-		System.out.println(integerToString(150, 3));
+		// Show number in binary
+		System.out.println("Binary: " + integerToString(8, 1));
+		// Show number in hexadecimal
+		System.out.println("Hexadecimal: " + integerToString(150, 4));
+		// Show number in Octal
+		System.out.println("Octal: " + integerToString(150, 3));
 	}
 	
 	private static String integerToString(int n, int base)
