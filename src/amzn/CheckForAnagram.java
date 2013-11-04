@@ -1,4 +1,4 @@
-package interview.amzn;
+package amzn;
 
 import java.util.HashMap;
 import java.util.Iterator;

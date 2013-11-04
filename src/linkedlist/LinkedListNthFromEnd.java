@@ -1,5 +1,6 @@
 package linkedlist;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class LinkedListNthFromEnd {
@@ -18,7 +19,19 @@ public class LinkedListNthFromEnd {
 	}
 
 	private static int findNthElement(LinkedList linkedList, int nTh) {
+		int counter = 0;
+		Integer nthElement = null;
+		for (Iterator<Integer> iterator = linkedList.iterator(), nthIterator = linkedList.iterator(); iterator.hasNext();) {
+			// Move the first iterator
+			iterator.next();
+			if (counter < (nTh - 1)) {
+				counter++;
+			} else {
+				nthElement = nthIterator.next();
+			}
+			
+		}
 		//linkedList.e
-		return 0;
+		return nthElement;
 	}
 }

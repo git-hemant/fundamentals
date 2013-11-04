@@ -1,10 +1,15 @@
 package sorting.complex;
 
+import java.util.ArrayList;
+
 import sorting.TestUtil;
 
 public class MergeSortComparable {
 
 	public static void main(String[] args) {
+		System.out.println( ('0' & 1) == 0);
+		ArrayList obj = null;
+		Comparable v = (Comparable) obj;
 		String[] n = { "In", "numerical", "linear", "algebra", "the",
 				"tridiagonal", "matrix", "algorithm", "also", "known", "as",
 				"the", "Thomas", "algorithm", "named", "after", "Llewellyn",
