@@ -1,1 +1,2 @@
-This package contains the sorting algorithms which have performance of O(N log N).
+This package contains the sorting algorithms which have performance of O(N log N),
+ except counting sort which have performance of O(N)
