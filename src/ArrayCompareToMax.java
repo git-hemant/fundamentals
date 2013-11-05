@@ -5,6 +5,10 @@ public class ArrayCompareToMax {
 		System.out.println("Max number is:" + max);
 	}
 	
+	// This is the worse algorithm to find maximum number
+	// as it is O(N^2), while we can easily find 
+	// maximum number by iterating and keep track
+	// of biggest number which can be done in O(N)
 	static int compareToAll(int array[]) {
 		int n = array.length;
 		int i, j;

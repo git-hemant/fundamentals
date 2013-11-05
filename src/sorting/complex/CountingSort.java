@@ -29,7 +29,7 @@ public class CountingSort  {
             a[i] = r.nextInt(20000);
         }
         
-        a = new int[] {10, 20, 8, -4, -7, 22 };
+        //a = new int[] {10, 20, 8, -4, -7, 22 };
 
         // Copy list to new array
         int[] a2 = new int[listSize];

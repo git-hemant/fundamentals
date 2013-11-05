@@ -1,10 +1,13 @@
+package number;
 public class NumberPowerOf2
 {
 	public static void main(String[] args)
 	{
-		for (int i = 0; i < java.lang.Integer.MAX_VALUE; i++)
-			if (isPowerOf2(i))
-				System.out.println(i + " = binary -> " + java.lang.Integer.toBinaryString(i) + "  " + i + " - 1 binary -> " + java.lang.Integer.toBinaryString(i - 1));
+		int j = 0;
+		for (j = 0; j < java.lang.Integer.MAX_VALUE; j++) {
+			if (isPowerOf2(j))
+				System.out.println(j + " = binary -> " + java.lang.Integer.toBinaryString(j) + "  " + j + " - 1 binary -> " + java.lang.Integer.toBinaryString(j - 1));
+		}
 	}
 	
 	// Let's for example consider the e.g. of 4
