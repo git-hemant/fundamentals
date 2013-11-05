@@ -1,3 +1,4 @@
+package misc;
 public class ArrayCompareToMax {
 	public static void main(String[] args) {
 		int array[] = {50, 12, 252, 25, 6, 122, 16323, 63, 3,  5};

@@ -6,8 +6,8 @@ import java.util.List;
 public class StringPermutaion {
 
 	public static void main(String[] args) {
-		List<String> permutations = new ArrayList<String>();
 		String s1 = "hemant";
+		List<String> permutations = new ArrayList<String>(factorial(s1.length()));
 		showPermutations("", s1, permutations);
 		System.out.println(s1 + " permutations: " + permutations.size());
 		System.out.println(permutations);
@@ -27,5 +27,12 @@ public class StringPermutaion {
 	        	// Prefix + current, before + after
 				showPermutations(prefix + s.charAt(i), s.substring(0, i) + s.substring(i+1), permutations);
 		}
+	}
+
+	private static int factorial(int n) {
+		if (n == 1) {
+			return n;
+		}
+		return n * factorial(n - 1);
 	}
 }
