@@ -37,7 +37,7 @@ public class NodeTest
 	 *      E
 	 * @param withCycle True means node E and A are having cycle.
 	 */
-	private Node createSampleNode(boolean withCycle)
+	public static Node createSampleNode(boolean withCycle)
 	{
 		Node nodeA = new Node('A');
 		Node nodeB = new Node('B');

@@ -9,6 +9,14 @@ import sorting.Sort;
  */
 public class MergeSort implements Sort {
 
+	static int  iterations;
+	static int  divisions;
+	static int newArrays;
+	
+	public int getIterations() { return iterations; }
+	public int getDivisions() { return divisions; }
+	public int getNewArrays() { return newArrays; }
+	
 	public int[] sort(int[] n) {
 		Object[] obj = divideArrayInTwo(n);
 		// Free up the unsorted elements memory before 
@@ -45,6 +53,7 @@ public class MergeSort implements Sort {
 		int n1Index = 0;
 		int n2Index = 0;
 		for (int i = 0; i < n.length; i++) {
+			iterations++;
 			// first we will check if we have already seen all items
 			// in array n1 or n2 to avoid AIOOBE.
 			if (n1Index == n1.length) {
@@ -73,6 +82,9 @@ public class MergeSort implements Sort {
 	 * Divide the given array into two arrays and return the arrays as Object.
 	 */
 	private static Object[] divideArrayInTwo(int[] n) {
+		newArrays += n.length;
+		System.out.println("Dividing array lenght: " + n.length);
+		divisions++;
 		int[] n1 = new int[n.length / 2];
 		int[] n2 = new int[n.length - n1.length];
 		System.arraycopy(n, 0, n1, 0, n1.length);
