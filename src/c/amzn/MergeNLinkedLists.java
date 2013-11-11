@@ -1,4 +1,4 @@
-package amzn;
+package c.amzn;
 
 //merge n linked lists, each linked list is sorted, and length of each linked list is also n.
 //get the sorted list in the end.
