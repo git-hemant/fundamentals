@@ -42,6 +42,7 @@ public class P1 {
 		
 		System.out.println("Max depth is: " + maxDepth(root));
 		System.out.println("Max depth (without recursion) is: " + maxDepthWithoutRecursion(root));
+		System.out.println("Max depth2 is: " + maxDepth2(root));
 		System.out.println("Min depth is: " + minDepth(root));
 	}
 	
@@ -59,6 +60,31 @@ public class P1 {
 		int minDepth = Math.min(minDepth(node.left), minDepth(node.right)); 
 		return 1 + minDepth; 
 	}
+	
+	static int maxDepth2 (Node r) {
+	    int depth = 0;
+	    Stack<Node> wq = new Stack<>();
+	    Stack<Node> path = new Stack<>();
+
+	    wq.push (r);
+	    while (!wq.empty()) {
+	        r = wq.peek();
+	        if (!path.empty() && r == path.peek()) {
+	            if (path.size() > depth)
+	                depth = path.size();
+	            path.pop();
+	            wq.pop();
+	        } else {
+	            path.push(r);
+	            if (r.right != null)
+	                wq.push(r.right);
+	            if (r.left != null)
+	                wq.push(r.left);
+	        }
+	    }
+
+	    return depth;
+	}	
 	
 	private static int maxDepthWithoutRecursion(Node node) {
 		// Assumption - we are assuming no cycle exist in the tree.
