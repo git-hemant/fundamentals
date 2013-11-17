@@ -61,10 +61,13 @@ public class P1 {
 		return 1 + minDepth; 
 	}
 	
+	// Suggested by someone on Stackoverflow
+	// this one doesn't need to keep track of 
+	// visited nodes.
 	static int maxDepth2 (Node r) {
 	    int depth = 0;
-	    Stack<Node> wq = new Stack<>();
-	    Stack<Node> path = new Stack<>();
+	    Stack<Node> wq = new Stack<Node>();
+	    Stack<Node> path = new Stack<Node>();
 
 	    wq.push (r);
 	    while (!wq.empty()) {
