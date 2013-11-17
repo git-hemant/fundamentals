@@ -4,8 +4,8 @@ package bitwise;
 public class Addition {
 
 	public static void main(String[] args) {
-		int a = 21;
-		int b = 31;
+		int a = 31;
+		int b = 21;
 		System.out.println(a + " + " + b + " using minus: " + addUsingMinus(a, b));
 		System.out.println(a + " + " + b + " using bitmanip: " + addUsingBitManip(a, b));
 	}
