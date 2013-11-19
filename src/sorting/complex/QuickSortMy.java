@@ -21,6 +21,10 @@ public class QuickSortMy {
 	private void sort(int[] n, int low, int high) {
 		int left = low;
 		int right = high;
+		// Some implementation spend some cycles here to randomize
+		// data, as certain data set can reduce the performance
+		// of sort to exponential
+		
 		// Choose the pivot number such that it is always between
 		// low and high.
 		int pivot = n[low + ((high - low)/2)];
