@@ -11,6 +11,19 @@ import java.util.Arrays;
 // the quick-selection developed by Hoare's which is like 
 // quick-sort developed by Hoare, here we do partial sorting
 // till Kth element.
+// The following approach would fail, if we can't modify
+// the order of original array, as creating copy of the
+// array means space complexity would be O(N). So alternatively
+// we can solve this using PriorityQueue by providing a 
+// explicit Comparator, so instead of natural ordering we will 
+// use our Comparator, and we will keep adding elements to
+// the PriorityQueue and keep removing them so that maximum
+// elements in the PriorityQueue would be K element, this way
+// at the end of iteration we will have our desired K elements
+// in the priority queue. Runtime complexity would be O(N K^2)
+// and in-case K is small we can say O(N) and space complexity
+// would be O(K) as we are keeping only extra K elements in the
+// priority queue.
 public class FindKthNumber {
 
 	public static void main(String[] args) {
