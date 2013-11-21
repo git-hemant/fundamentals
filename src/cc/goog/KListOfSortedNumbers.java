@@ -6,6 +6,7 @@ public class KListOfSortedNumbers {
 		int[] list2 = {0, 9, 12, 20}; 
 		int[] list3 = {5, 18, 22, 30};
 		ListItem[] flatList = kmerge(new int[][]{list1, list2, list3});
+		
 		// Flatten all the list by doing n way merge.
 		ListItem[] flatList = new ListItem[list1.length + list2.length + list3.length];
 		int list1Index = 0, list2Index = 0, list3Index = 0; 
@@ -29,6 +30,7 @@ public class KListOfSortedNumbers {
 
 	static class ListItem {
 		int number;
+		int originKIndex;
 	}
 	static class List1Item extends ListItem{}
 	static class List2Item extends ListItem{}

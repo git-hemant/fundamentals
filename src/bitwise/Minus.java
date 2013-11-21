@@ -7,11 +7,15 @@ public class Minus {
 		int a = 31;
 		int b = 21;
 		System.out.println(a + " - " + b + " using minus: " + minusUsingBitManip(a, b));
+		
+		System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
 	}
 	
 	static int minusUsingBitManip(int a, int b) {
 		// Now apply two's complement to the second term.
 		b = twosComplement(b);
+		// Now if we are allowed to use + operator
+		// we can do "return a + b;"
 		return Addition.addUsingBitManip(a, b);
 	}	
 
