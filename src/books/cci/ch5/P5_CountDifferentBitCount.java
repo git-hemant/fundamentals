@@ -3,7 +3,7 @@ package books.cci.ch5;
 // Write a function to determine the number of bits required to convert integer A to integer B.
 // Input: 31, 14  - Binary for 31 is 11111 and Binary for 14 is 1110
 // Output: 2
-public class P5 {
+public class P5_CountDifferentBitCount {
 
 	public static void main(String[] args) {
 		int a = 31; int b = 14;

@@ -1,6 +1,6 @@
 package books.cci.ch5;
 
-public class P6 {
+public class P6_SwapOddEvenBits {
 
 	public static void main(String[] args) {
 		int n = 25;

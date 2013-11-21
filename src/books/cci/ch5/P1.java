@@ -9,7 +9,7 @@ package books.cci.ch5;
 public class P1 {
 
 	public static void main(String[] args) {
-		int N = 1024;
+		int N = 1040;
 		int M = 21;
 		int i = 2;
 		int j = 6;
@@ -32,7 +32,7 @@ public class P1 {
 
 		// 1’s, with 0s between i and j
 		int mask = left | right;
-
+		
 		// Clear i through j, then put m in there
 		return (n & mask) | (m << i);
 	}

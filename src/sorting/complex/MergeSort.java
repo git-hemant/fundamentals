@@ -3,7 +3,14 @@ package sorting.complex;
 import sorting.Sort;
 
 /**
- * Merge sort implementation which attempts to give performance of O(N log N).
+ * Merge sort implementation which attempts to give performance of O(N log N)
+ * and space complexity O(N).
+ * 
+ *  Merge sort have following minumum method
+ *  a) Dividing array: This method divide a given array into two equal arrays.
+ *  b) Merge array: This method takes two arrays and merge them into one based on order.
+ *  c) Recursion: This method takes two arrays as input, and repeatedly invoke division
+ *     and merging in this method. 
  * 
  * @author HemantSingh@gmail.com
  */

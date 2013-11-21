@@ -3,7 +3,7 @@ package books.cci.ch5;
 // Explain what the following code does: ((n & (n-1)) == 0).
 // Solution: This means the number if perfect square for e.g.
 // 8 (1000) & 7 (111) == 0 where 8 is perfect square 4~2
-public class P4 {
+public class P4_PerfectSquare {
 
 	public static void main(String[] args) {
 		// Print perfect squre numbers.
