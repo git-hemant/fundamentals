@@ -22,6 +22,9 @@ public class P2 {
 		// Remember mask is radix - 1.
 		int mask = radix - 1;
 		while (n != 0) {
+			// This is important - we are converting from left to right
+			// and thus we need to keep moving new bits to right by discarding
+			// base bits.
 			str[--index] = all[(n & mask)];
 			n = n >>> base;
 		}

@@ -1,7 +1,7 @@
 package books.cci.ch5;
 
 // Given an integer, print the next smallest and next largest number that have the same number of 1 bits in their binary representation.
-public class P3 {
+public class P3_SmallLargerWithSameBits {
 	public static void main(String[] args) {
 		int n = 31;
 		int oneBits = count1Bits(n);

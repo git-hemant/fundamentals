@@ -13,12 +13,13 @@ package c.amzn;
   - 3 - 2/1
   - 2
   - 1
-import java.util.*;
+ 
+import java.util.LinkedList;
 
 
 public class MergeNLinkedLists {
 
-    public LinkedList[] divideIntoTwo(LinkedList[] list) 
+    public LinkedList[][] divideIntoTwo(LinkedList[] list) 
     {
         LinkedList[] linkedListA = new LinkedList[list.length/2];
         LinkedList[] linkedListB = new LinkedList[list.length - linkedListA.length];

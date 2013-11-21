@@ -1,5 +1,6 @@
 package books.cci.ch2;
 
+// Based on tortoise and hare approach
 public class P5 {
 	
 	public static void main(String[] args) {
