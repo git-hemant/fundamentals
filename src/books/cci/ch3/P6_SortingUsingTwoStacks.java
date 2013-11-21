@@ -6,7 +6,7 @@ import java.util.Stack;
  * Given a input stack of integers, sort these numbers in ascending order in another 
  * stack.
  */
-public class P6 {
+public class P6_SortingUsingTwoStacks {
 	
 	public static void main(String[] args) {
 		int[] n = new int[]{32, 22, 53, 68};

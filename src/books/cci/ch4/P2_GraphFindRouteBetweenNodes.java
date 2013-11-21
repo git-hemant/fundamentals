@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 // Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
-public class P2 {
+public class P2_GraphFindRouteBetweenNodes {
 
 	/**
 	 *  N1 --> N2

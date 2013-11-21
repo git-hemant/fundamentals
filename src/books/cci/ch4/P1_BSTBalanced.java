@@ -13,10 +13,10 @@ import java.util.Stack;
  * exceed 1, since the difference of the min and the max depth is the maximum
  * distance difference possible in the tree. *
  */
-public class P1 {
+public class P1_BSTBalanced {
 
 	public static void main(String[] args) {
-		new P1().run();
+		new P1_BSTBalanced().run();
 	}
 	
 	private void run() {

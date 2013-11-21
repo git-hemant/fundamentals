@@ -1,6 +1,6 @@
 package books.cci.ch5;
 
-public class P2 {
+public class P2_NumberToString {
 
 	public static void main(String[] args) {
 		System.out.println("Number: " + 4 + " binary: " + numberToString(4, 1));

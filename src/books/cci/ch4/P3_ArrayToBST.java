@@ -16,7 +16,7 @@ import books.cci.util.BinaryTree.TreeNode;
  *  3. Insert (into the right subtree) the right subarray elements
  *  4. Recurse 
  */
-public class P3 {
+public class P3_ArrayToBST {
 	static int data[] = { 2, 4, 5, 11, 21, 22, 23, 39, 45 };
 	
 	/**

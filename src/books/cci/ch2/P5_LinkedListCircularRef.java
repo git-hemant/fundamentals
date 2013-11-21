@@ -1,7 +1,7 @@
 package books.cci.ch2;
 
 // Based on tortoise and hare approach
-public class P5 {
+public class P5_LinkedListCircularRef {
 	
 	public static void main(String[] args) {
 		LinkedListNode head = buildLinkedList();
@@ -23,6 +23,9 @@ public class P5 {
 		
 		// If there is no circular reference - return null.
 		if (fast.next == null) return null;
+		
+		// At this point we are sure that circular ref exist.
+		// Now we will find the node where it start.
 		
 		// Start the slow pointer at head, and keep 
 		// moving both till they meet

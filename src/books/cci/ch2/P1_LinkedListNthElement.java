@@ -3,7 +3,7 @@ package books.cci.ch2;
 /**
  * Implement an algorithm to find the nth to last element of a singly linked list.
  */
-public class P1 {
+public class P1_LinkedListNthElement {
 
 	public static void main(String[] args) {
 		// Build linked list

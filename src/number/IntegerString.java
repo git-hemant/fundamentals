@@ -46,12 +46,12 @@ public class IntegerString {
 		// 1 << 1 is 2 [For binary]
 		// 1 << 3 is 8 [For octal]
 		// 1 << 4 is 16[for Hexadecimal]
-		int mask = (1 << base) - 1;
+		int radix = (1 << base) - 1;
 		char[] ALL_NUMBERs = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 		int pos = 32;
 		do {
 			// We are using & with mask so that we can AND against last bits of the number. 
-			buf[--pos] = ALL_NUMBERs[n & mask];
+			buf[--pos] = ALL_NUMBERs[n & radix];
 			// Now discard the bit which we have tested.
 			// Warning: Here we must NOT use >> but >>> otherwise in case of negative
 			// numbers we will run into infinite loop.

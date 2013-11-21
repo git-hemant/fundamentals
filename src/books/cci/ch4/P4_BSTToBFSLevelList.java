@@ -19,7 +19,7 @@ import books.cci.util.BinaryTree.TreeNode;
  * thus use a dummy node to indicate when we have finished one level and are
  * starting on the next.
  */
-public class P4 {
+public class P4_BSTToBFSLevelList {
 	
 	public static void main(String[] args) {
 		TreeNode node = BinaryTree.getBinaryTree();

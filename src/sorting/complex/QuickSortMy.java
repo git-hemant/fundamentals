@@ -27,7 +27,7 @@ public class QuickSortMy {
 		
 		// Choose the pivot number such that it is always between
 		// low and high.
-		int pivot = n[low + ((high - low)/2)];
+		int pivot = n[ (left + right)/2];
 		
 		// While left is less than right.
 		while (left < right) {

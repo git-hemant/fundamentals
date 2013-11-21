@@ -8,7 +8,7 @@ package books.cci.ch1;
  * 
  * More info: ASCII A => 65, Z => 90, a => 97, z => 122.
  */
-public class P1 {
+public class P1_StringUniqueCharacters {
 	
 	private static final String INPUT = "brownfOx";
 	

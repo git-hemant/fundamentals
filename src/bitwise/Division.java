@@ -60,7 +60,7 @@ public class Division {
 			if (dividend >= denom) {
 				dividend = dividend - denom;
 				// Consume the count value;
-				answer = answer | count;
+				answer = answer + count;
 			}
 			count >>>= 1;
 			denom >>= 1;

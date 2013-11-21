@@ -3,7 +3,7 @@ package books.cci.ch3;
 import java.util.Stack;
 
 // Implement a MyQueue class which implements a queue using two stacks.
-public class P5 {
+public class P5_QueueUsingTwoStacks {
 
 	public static void main(String[] args) {
 		Queue<String> q = new Queue<String>();

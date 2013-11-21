@@ -23,7 +23,7 @@ public class Anagrams
 	    else {
 	        for (int i = 0; i < n; i++)
 	        	// Prefix + current, before + after
-	            showStringPermutations(prefix + str.charAt(i), str.substring(i+1) + str.substring(0, i));
+	            showStringPermutations(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1));
 	    }
 	}
 	
