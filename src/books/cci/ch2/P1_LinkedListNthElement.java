@@ -27,7 +27,6 @@ public class P1_LinkedListNthElement {
 		return n2;
 	}
 
-
 	private static LinkedListNode buildLinkedList(int[] data) {
 		LinkedListNode head = null;
 		LinkedListNode prev = null;

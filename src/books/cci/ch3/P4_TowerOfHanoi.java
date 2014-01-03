@@ -15,8 +15,18 @@ public class P4_TowerOfHanoi {
 		for (int i = n - 1; i >= 0; i--)
 			towers[0].add(i);
 		
+		printAll(towers);		
+		
 		// Recursively move disk
 		towers[0].moveDisks(n, towers[2], towers[1]);
+
+		printAll(towers);		
+	}
+	
+	private static void printAll(Tower[] towers) {
+		for (Tower tower : towers) {
+			System.out.println("Tower: " + (tower.index + 1) + " disks: " + tower.disks);
+		}
 	}
 
 	static class Tower {

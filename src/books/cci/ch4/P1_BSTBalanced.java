@@ -11,7 +11,7 @@ import java.util.Stack;
  * 
  * The idea is very simple: the difference of min depth and max depth should not
  * exceed 1, since the difference of the min and the max depth is the maximum
- * distance difference possible in the tree. *
+ * distance difference possible in the tree.
  */
 public class P1_BSTBalanced {
 
@@ -57,8 +57,7 @@ public class P1_BSTBalanced {
 		if (node == null) {
 			return 0;
 		}
-		int minDepth = Math.min(minDepth(node.left), minDepth(node.right)); 
-		return 1 + minDepth; 
+		return 1 + Math.min(minDepth(node.left), minDepth(node.right)); 
 	}
 	
 	// Suggested by someone on Stackoverflow

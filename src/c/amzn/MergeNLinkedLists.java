@@ -13,36 +13,37 @@ package c.amzn;
   - 3 - 2/1
   - 2
   - 1
- 
+*/ 
 import java.util.LinkedList;
 
 
 public class MergeNLinkedLists {
 
-    public LinkedList[][] divideIntoTwo(LinkedList[] list) 
+    public LinkedList<Integer>[][] divideIntoTwo(LinkedList<Integer>[] list) 
     {
-        LinkedList[] linkedListA = new LinkedList[list.length/2];
-        LinkedList[] linkedListB = new LinkedList[list.length - linkedListA.length];
+        LinkedList<Integer>[] linkedListA = new LinkedList[list.length/2];
+        LinkedList<Integer>[] linkedListB = new LinkedList[list.length - linkedListA.length];
         System.arraycopy(list, 0, linkedListA, 0, linkedListA.length);
         System.arraycopy(list, linkedListA.length, linkedListB, 0, linkedListB.length);
         return new LinkedList[][]{ linkedListA, linkedListB};
     }
     
-    public LinkedList mergeLists(LinkedList[] list)
+    public LinkedList<Integer> mergeLists(LinkedList<Integer>[] list)
     {
         if (list.length == 1) {
             return list[0];
         } else if (list.length == 2) {
-            return mergedLinkedList = mergeLinkedList(list[0], list[1]);
+            return  mergeLinkedList(list[0], list[1]);
         } else {
-            LinkedList[] biggerLinkedList = divideIntoTwo(list);
-            return mergeLinkedList(mergeLists[biggerLinkedList[0], biggerLinkedList[1]));
+            LinkedList<Integer>[][] biggerLinkedList = divideIntoTwo(list);
+            
+            return mergeLinkedList(mergeLists(biggerLinkedList[0]), mergeLists(biggerLinkedList[1]));
         }
     }
     
-    public LinkedList mergeLinkedList(LinkedList linkedListA, LinkedList linkedListB) 
+    public LinkedList<Integer> mergeLinkedList(LinkedList<Integer> linkedListA, LinkedList<Integer> linkedListB) 
     {
-        LinkedList resultLinkedList = new LinkedList();
+        LinkedList<Integer> resultLinkedList = new LinkedList<Integer>();
         while (linkedListA.size() > 0 || linkedListB.size() > 0) {
             if (linkedListA.size() == 0) {
                 resultLinkedList.addAll(linkedListB);
@@ -62,6 +63,7 @@ public class MergeNLinkedLists {
                 }
             }
         }
+        return resultLinkedList;
     }
 }
- */
+

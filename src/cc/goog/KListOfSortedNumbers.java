@@ -1,6 +1,7 @@
 package cc.goog;
 
 public class KListOfSortedNumbers {
+	/*
 	public static void main(String[] args) {
 		int[] list1 = {4, 10, 15, 24, 26};
 		int[] list2 = {0, 9, 12, 20}; 
@@ -35,4 +36,5 @@ public class KListOfSortedNumbers {
 	static class List1Item extends ListItem{}
 	static class List2Item extends ListItem{}
 	static class List3Item extends ListItem{}
+	*/
 }
