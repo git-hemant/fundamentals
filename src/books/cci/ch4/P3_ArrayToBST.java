@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+import sun.org.mozilla.javascript.internal.Node;
+
 import books.cci.util.BinaryTree.TreeNode;
 
 /**
@@ -40,8 +42,11 @@ public class P3_ArrayToBST {
 		System.out.println("");
 		System.out.println("Max depth in tree is: " + maxDepth(root));
 		System.out.println("Min depth in tree is: " + minDepth(root));
+		System.out.println("Max depth(no recursion) in tree is: " + maxDepthNoRecursion(root));
+		System.out.println("Min depth(no recursion) in tree is: " + minDepthNoRecursion(root));
 	}
 	
+	// Very easy way of doing BFS.
 	private static void showBFS(TreeNode root) {
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.add(root);
@@ -51,6 +56,33 @@ public class P3_ArrayToBST {
 			if (node.left != null) queue.add(node.left);
 			if (node.right != null) queue.add(node.right);
 		}
+	}
+
+	// Find the maximum depth in the tree without using recursion
+	private static int maxDepthNoRecursion(TreeNode root) {
+		return Math.max(maxDepthNoRecursion(root, true), maxDepthNoRecursion(root, false)); 
+	}
+	
+	// Find the minimum depth in the tree without using recursion
+	private static int minDepthNoRecursion(TreeNode root) {
+		return Math.min(maxDepthNoRecursion(root, true), maxDepthNoRecursion(root, false)); 
+	}
+	
+	private static int maxDepthNoRecursion(TreeNode root, boolean left) {
+		Stack<TreeNode> stack = new Stack<>();
+		stack.add(root);
+		int depth = 0;
+		while (!stack.isEmpty()) {
+			TreeNode node = stack.pop();
+			if (left && node.left != null) stack.add(node.left);
+			// Add the right node only if the left node is empty to find max depth
+			if (left && node.left == null && node.right != null) stack.add(node.right); 
+			if (!left && node.right != null) stack.add(node.right);
+			// Add the left node only if the right node is empty to find max depth
+			if (!left && node.right == null && node.left != null) stack.add(node.left);
+			depth++;
+		}
+		return depth;
 	}
 	
 	// DFS Uses Stack

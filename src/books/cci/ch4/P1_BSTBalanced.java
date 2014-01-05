@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import books.cci.util.BinaryTree.TreeNode;
+
 /**
  * Implement a function to check if a tree is balanced. For the purposes of this
  * question, a balanced tree is defined to be a tree such that no two leaf nodes
@@ -41,9 +43,9 @@ public class P1_BSTBalanced {
 		Node root = new Node(5, n4, n7);
 		
 		System.out.println("Max depth is: " + maxDepth(root));
-		System.out.println("Max depth (without recursion) is: " + maxDepthWithoutRecursion(root));
-		System.out.println("Max depth2 is: " + maxDepth2(root));
+		System.out.println("Max depth (without recursion) is: " + maxDepthNoRecursion(root));
 		System.out.println("Min depth is: " + minDepth(root));
+		System.out.println("Min depth (without recursion) is: " + minDepthNoRecursion(root));
 	}
 	
 	// Very interesting function - It uses recursion plus DFS approach
@@ -60,62 +62,31 @@ public class P1_BSTBalanced {
 		return 1 + Math.min(minDepth(node.left), minDepth(node.right)); 
 	}
 	
-	// Suggested by someone on Stackoverflow
-	// this one doesn't need to keep track of 
-	// visited nodes.
-	static int maxDepth2 (Node r) {
-	    int depth = 0;
-	    Stack<Node> wq = new Stack<Node>();
-	    Stack<Node> path = new Stack<Node>();
-
-	    wq.push (r);
-	    while (!wq.empty()) {
-	        r = wq.peek();
-	        if (!path.empty() && r == path.peek()) {
-	            if (path.size() > depth)
-	                depth = path.size();
-	            path.pop();
-	            wq.pop();
-	        } else {
-	            path.push(r);
-	            if (r.right != null)
-	                wq.push(r.right);
-	            if (r.left != null)
-	                wq.push(r.left);
-	        }
-	    }
-
-	    return depth;
-	}	
+	// Find the maximum depth in the tree without using recursion
+	private static int maxDepthNoRecursion(Node root) {
+		return Math.max(maxDepthNoRecursion(root, true), maxDepthNoRecursion(root, false)); 
+	}
 	
-	private static int maxDepthWithoutRecursion(Node node) {
-		// Assumption - we are assuming no cycle exist in the tree.
-		int maxDepth = 0;
-		Stack<Node> s = new Stack<Node>();
-		List<Node> visitedNodes = new ArrayList<Node>();
-		Node n = node;
-		s.push(n);
-		while (!s.isEmpty() && (n = s.peek()) != null) {
-			if (s.size() > maxDepth) {
-				maxDepth = s.size();
-			}
-			visitedNodes.add(n);
-			if (n.left != null && !visitedNodes.contains(n.left)) {
-				s.add(n.left);
-				n = n.left;
-				// Continue iteration without removing parent from stack.
-				continue;
-			}
-			if (n.right != null && !visitedNodes.contains(n.right)) {
-				s.add(n.right);
-				n = n.right;
-				// Continue iteration without removing parent from stack.
-				continue;
-			}
-			// Remove the node now from stack.
-			s.pop();
+	// Find the minimum depth in the tree without using recursion
+	private static int minDepthNoRecursion(Node root) {
+		return Math.min(maxDepthNoRecursion(root, true), maxDepthNoRecursion(root, false)); 
+	}
+	
+	private static int maxDepthNoRecursion(Node root, boolean left) {
+		Stack<Node> stack = new Stack<>();
+		stack.add(root);
+		int depth = 0;
+		while (!stack.isEmpty()) {
+			Node node = stack.pop();
+			if (left && node.left != null) stack.add(node.left);
+			// Add the right node only if the left node is empty to find max depth
+			if (left && node.left == null && node.right != null) stack.add(node.right); 
+			if (!left && node.right != null) stack.add(node.right);
+			// Add the left node only if the right node is empty to find max depth
+			if (!left && node.right == null && node.left != null) stack.add(node.left);
+			depth++;
 		}
-		return maxDepth;
+		return depth;
 	}
 	
 	class Node {
