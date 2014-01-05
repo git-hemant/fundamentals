@@ -80,10 +80,10 @@ public class P1_BSTBalanced {
 			Node node = stack.pop();
 			if (left && node.left != null) stack.add(node.left);
 			// Add the right node only if the left node is empty to find max depth
-			if (left && node.left == null && node.right != null) stack.add(node.right); 
-			if (!left && node.right != null) stack.add(node.right);
+			else if (left && node.left == null && node.right != null) stack.add(node.right); 
+			else if (!left && node.right != null) stack.add(node.right);
 			// Add the left node only if the right node is empty to find max depth
-			if (!left && node.right == null && node.left != null) stack.add(node.left);
+			else if (!left && node.right == null && node.left != null) stack.add(node.left);
 			depth++;
 		}
 		return depth;
