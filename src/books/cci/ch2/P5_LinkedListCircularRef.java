@@ -12,7 +12,7 @@ public class P5_LinkedListCircularRef {
 	private static LinkedListNode findCircularRef(LinkedListNode head) {
 		LinkedListNode fast = head;
 		LinkedListNode slow = head;
-		while (fast.next != null) {
+		while (fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 			System.out.println("Fast: " + fast + " slow: " + slow);

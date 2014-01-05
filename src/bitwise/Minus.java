@@ -20,6 +20,10 @@ public class Minus {
 	}	
 
 	// In two's complement we invert the bit and add 1.
+	// This way we can negate the number for e.g.
+	// 4  --2's complement ---> -4
+	// 40 --2's complement ---> -40
+	// 87 --2's complement ---> -87
 	static int twosComplement(int n) { 
 		// If needed we can use here addition by bit manipulation
 		// return Addition.addUsingBitManip(~n, 1);
